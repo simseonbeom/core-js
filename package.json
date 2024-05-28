@@ -1,0 +1,19 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server client --host=localhost --port=5500 --no-browser"
+  },
+  "keywords": [],
+  "author": "범쌤",
+  "license": "ISC",
+  "description": "자바스크립트 코어 학습",
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.2.5"
+  }
+}
