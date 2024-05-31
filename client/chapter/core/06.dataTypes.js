@@ -102,6 +102,8 @@ const user = {
 
 };
 
+
+
 // Array
 
 const newArray = new Array(2);
@@ -132,7 +134,6 @@ const 와붕 = 붕어빵틀('와사비')
 // console.log(팥붕);
 // console.log(슈붕);
 // console.log(와붕);
-
 
 
 
