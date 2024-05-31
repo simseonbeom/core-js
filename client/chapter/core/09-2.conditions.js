@@ -37,12 +37,65 @@ console.log('reverseValue : ',reverseValue)
 let whichFalsy = true && ' ' && [] && {thisIsFalsy:false};
 
 
-
-
-
-
 // 첫번째 Truthy를 찾는 연산 (||)
 let whichTruthy = false || '' || [2,3].length || {thisIsTruthy:true};
+
+
+console.clear()
+
+
+
+let userName = prompt('누구세요?');
+
+if(userName?.toLowerCase() === 'admin'){
+  let password = prompt('비밀번호는?');
+
+  if(password?.toLowerCase() === 'themaster'){
+    console.log('환영합니다~~!! 짝짝');
+
+  }else if(password === null){
+    console.log('취소!');
+
+  }else{
+    console.log('비밀번호를 잘못 입력하셨습니다.');
+  }
+}
+else if(userName === null || userName?.replace(/\s*/g,'') === ''){
+  console.log('취소!');
+}
+else{
+  console.log('실패!');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
