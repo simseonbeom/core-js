@@ -118,33 +118,50 @@ function getRandom(n){
 function getDay(value){
 
   switch (value) {
-    case 0: console.log('일'); break;
-    case 1: console.log('월'); break;
-    case 2: console.log('화'); break;
-    case 3: console.log('수'); break;
-    case 4: console.log('목'); break;
-    case 5: console.log('금'); break;
-    case 6: console.log('토'); break;
+    case 0: return '일';
+    case 1: return '월';
+    case 2: return '화';
+    case 3: return '수';
+    case 4: return '목';
+    case 5: return '금';
+    case 6: return '토';
   }
 }
 
 
 // 3. 0~6까지 랜덤수를 받아서
 
-
+console.clear()
 
 function weekend(){
   // getDay 실행해서 요일을 받아옴  일 ~ 월
+  const today = getDay(getRandom(7));
+
+
+  // if(today.includes('토') || today.includes('일')){
+  //   return '주말입니다!';
+  // }else{
+  //   return '평일입니다.'
+  // }
+
 
   // 해당 요일을 가지고 토,일 => 주말입니다.
-  
+
   // if.. switch.. 삼항식
 
   // 평일입니다.
 
+  // const day = today.includes('토') ? '토요일' : today.includes('일') ? '일요일' : '평일'
+  // return day;
+  return today.includes('토') ? '토요일' : today.includes('일') ? '일요일' : '평일'
+
 }
 
 
+
+const day = weekend();
+
+console.log(day) // '평일'
 
 
 
