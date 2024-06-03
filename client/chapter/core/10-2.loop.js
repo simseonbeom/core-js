@@ -33,14 +33,73 @@
 // - 순환 중단
 
 
+// let result = prompt('몇 번??');
 
-if... break;
+// do{
+//   console.log('최초 실행된 메시지입니다.');
+  
+//   if(result < 0){
+//     break;
+//   }
+//   result--;
+// }while(result >= 0)
 
 
 
 
 // do ~ while 문 (순환)
 // - 위 do ~ while 문을 순방향으로 순환되도록 설정
+
+
+// let count = 0;
+
+// do{
+//   console.log(count++);
+
+// }while(result--)
+
+
+
+
+
+
+let first = document.querySelector('.first');
+
+
+
+// do{
+  
+//   first = first.nextSibling;
+
+// }while(first.nodeType !== 1)
+
+
+
+  function next(node){
+
+    do{
+      
+      node = node.nextSibling;
+
+    }while(node.nodeType !== 1)
+
+    return node
+  }
+  
+
+
+  const second = next(first) // .second
+
+
+
+
+// second
+
+// first의 다음 요소 선택 => .second
+
+
+
+
 
 
 
