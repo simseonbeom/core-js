@@ -43,36 +43,47 @@ let whichTruthy = false || '' || [2,3].length || {thisIsTruthy:true};
 
 console.clear()
 
+function sayHi(){
+  return 'hello'
+}
 
+function login(){
 
-let userName = prompt('누구세요?');
+  let userName = prompt('누구세요?');
 
-if(userName?.toLowerCase() === 'admin'){
-  let password = prompt('비밀번호는?');
+  let say = sayHi();
+  
+  // userName이 null, undefined => 아래 코드 실행 안함.
+  
+  if(userName === null || undefined) return;
 
-  if(password?.toLowerCase() === 'themaster'){
-    console.log('환영합니다~~!! 짝짝');
+  if(userName.toLowerCase() === 'admin'){
+    let password = prompt('비밀번호는?');
 
-  }else if(password === null){
-    console.log('취소!');
+    if(password.toLowerCase() === 'themaster'){
+      console.log(`환영합니다~~!!${say}`);
 
-  }else{
-    console.log('비밀번호를 잘못 입력하셨습니다.');
+    }else if(password === null){
+      console.log('취소!');
+
+    }else{
+      console.log('비밀번호를 잘못 입력하셨습니다.');
+      login()
+    }
   }
+  else if(userName === null || userName.replace(/\s*/g,'') === ''){
+    console.log('취소!');
+  }
+  else{
+    console.log('실패!');
+  }
+
 }
-else if(userName === null || userName?.replace(/\s*/g,'') === ''){
-  console.log('취소!');
-}
-else{
-  console.log('실패!');
-}
 
 
 
 
-
-
-
+login()
 
 
 
