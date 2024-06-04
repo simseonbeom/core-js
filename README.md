@@ -40,5 +40,5 @@
 - [x] loop (do..while) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/10-2.loop.js)
 - [x] loop (for) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/10-3.loop.js)
 - [x] loop (for...in) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/10-4.loop.js)
-- [ ] loop (for...of) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/10-5.loop.js)
+- [x] loop (for...of) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/10-5.loop.js)
 

@@ -15,7 +15,7 @@ const javaScript = {
 };
 
 
-Object.prototype.nickName = '호랑이';
+// Object.prototype.nickName = '호랑이';
 
 // console.log( 'nickName' in javaScript );
 
@@ -44,17 +44,75 @@ Object.prototype.nickName = '호랑이';
 // - 배열 객체 순환에 사용할 경우?
 
 
+// enumerable : 열거 가능한
+
+
 for(let key in javaScript){
-  console.log(key);
+  
+  if(Object.prototype.hasOwnProperty.call(javaScript,key)){
+
+    // console.log(javaScript[key]);
+
+  }
 }
 
 
 
+// 점 표기법      => 변수 설정 x
+// 대괄호 표기법   => 변수 설정 o
+
+
+
+const tens = [10,100,1000,10_000];
+
+
+for(let key in tens){
+  console.log(tens[key]);
+  // console.log(key);
+}
+
+
+// 배열은 순서 보장이 안됨, 성능 ↓  => for...in은 객체에게 양보하자.
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const obj = {}
+
+
+obj.nickName = 'tiger'
+
+
+// Object.defineProperty(obj,'age',{
+//   value:30,
+//   enumerable: true,
+//   writable: false,
+//   configurable:true
+// })
+
+
+// Object.defineProperties(obj,{
+//   age:{
+//     value:30,
+//     enumerable:true,
+//     writable:true
+//   }
+// })
 
 
 
