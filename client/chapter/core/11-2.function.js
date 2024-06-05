@@ -20,7 +20,7 @@ const resultZ = calcTotal(9000, -2500, 5000, 11900);
 // 함수 선언 → 일반 함수 (표현)식
 let calculateTotal = function (){
 
-  // 함수 안에서만 접근 가능한 인수들의 집합 객체로서 배열과 유사하여 유사배열 이라 불리는 변수
+  // 함수 안에서만 접근 가능한 인수들의 집합 객체로서 배열과 유사하여 유사배열 이라 불리는 지역 변수
   let total = 0;
   
   // for 문
@@ -47,16 +47,16 @@ let calculateTotal = function (){
 
 
   // forEach
-  // arr.forEach(function(price){
-  //   total += price;
-  // })
+  arr.forEach(function(price){
+    return total += price;
+  })
 
   // arr.forEach(price => total += price)
 
   // reduce
-  // const result = arr.reduce(function(acc,cur){
-  //   return acc + cur
-  // },0)
+  const result = arr.reduce(function(acc,cur){
+    return acc + cur
+  },0)
 
   // const result = arr.reduce((acc,cur) => acc + cur,0)
 
@@ -133,8 +133,6 @@ cb(
   }
 )
 
-
-
 function movePage(url,success,fail){
 
   if(url.includes('https')){
@@ -150,7 +148,7 @@ movePage(
   function(url){
  
     console.log(`현재 입력하신 url은 ${url}입니다. 3초 뒤 해당 사이트로 이동합니다.`);
-    location.href = url
+    // location.href = url
   },
   function(){
     console.log('잘못된 url을 입력하셨습니다.');
@@ -159,11 +157,29 @@ movePage(
 
 
 
+// higher-order function 고차함수
 
+function map(arr,func){
 
+  let result = [];
 
+  for(let i = 0; i < arr.length; i++){
+    result.push(func(arr[i]))
+  }
 
+  return result
+  
+}
+// 함수를 인수로 받아 처리함.
+// 함수를 리턴함
 
+function greater(n){
+  return function (m){
+    return n > m
+  }
+}
+
+const g = (n) => (m)=> n > m
 
 
 
@@ -176,6 +192,107 @@ movePage(
 // 즉시 실행 함수 (표현)식
 // Immediately Invoked Function Expression
 let IIFE;
+
+
+// 함수가 선언됨과 동시에 실행되는 것을 말합니다.
+
+// var는 블록 스코프 : x
+// var는 함수 스코프 : o
+
+// encapsulation (캡슐화)
+// 모듈 프로그래밍 => (import, export)
+// import css from '../'
+
+// 즉시실행함수는 매개변수를 받을 수 있나요?  window => tiger
+
+const MASTER = (function (tiger){
+
+  
+  let uuid = 'azxcqwASFqjKJ112314!23'
+  
+  return {
+    getKey(){
+      return uuid
+    },
+    setKey(value){
+      uuid = value
+    }
+  }
+
+})(window)
+
+
+// uuid = 'asdasdasdas'
+
+
+
+
+const css = (function(){
+
+  function setStyle(node,prop,value){
+    if(typeof node === 'string') node = document.querySelector(node)
+    if(typeof prop !== 'string') throw new Error('setStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+    if(!value) throw new Error('setStyle 함수의 세 번째 인수는 필수값 입니다.');
+    node.style[prop] = value
+  }
+  
+  function getStyle(node,prop){
+    if(typeof node === 'string') node = document.querySelector(node);
+    if(typeof prop !== 'string') throw new Error('getStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+    return getComputedStyle(node)[prop]
+  }
+  
+  function css(node,prop,value){
+    return !value ? getStyle(node,prop) : setStyle(node,prop,value);
+  }
+
+  return css
+  
+})()
+
+
+// closure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

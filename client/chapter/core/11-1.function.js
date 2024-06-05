@@ -164,7 +164,7 @@ function css(node,prop,value){
 
 // const css2 = (node,prop,value) => !value ? getStyle(node,prop) : setStyle(node,prop,value);
 
-// css2('.first','color','red') // setter
+css('.first','color','red') // setter
 
 css('.first','color') // getter
 
