@@ -53,10 +53,13 @@ const result = calcPrice(1000,3000);
 // 좋은 함수 작성 여건
 
 
+
 // 1. 함수의 이름을 잘 지어야 한다. (동사) / 가독성 => 읽었을 때 바로 기능을 알 수 있다.
-// 2. 전역의 오염을 막는다.
 // 3. 하나의 기능만을 수행해야 한다.
-// 4. 재사용성이 좋아야 한다.
+
+// 2. 전역의 오염을 막는다.
+
+// 4. 재사용성이 좋아야 한다. ( 매개변수 => 유연한 함수 )
 
 
 
@@ -71,7 +74,7 @@ function rem(pxValue = 0,base = 16){
     throw new Error('rem 함수의 첫 번째 인수는 필수 입력 값 입니다.');
   }
 
-  if(typeof pxValue === 'string'){
+  if(typeof pxValue === 'string'){ 
     pxValue = parseInt(pxValue,10) 
   }
   if(typeof base === 'string'){
@@ -92,7 +95,6 @@ console.assert(rem('30px',10) === '3rem')
 
 
 // css(node: string, prop: string, value: number|strung) : string;
-let css;
 
 
 // 점 표기법    => 변수로 사용 x
@@ -113,17 +115,58 @@ function setStyle(node,prop,value){
 }
 
 
-setStyle('.first','color')
+setStyle('.first','color','blue')
 
 
 
 
+function getStyle(node,prop){
+
+  if(typeof node === 'string') node = document.querySelector(node);
+  if(typeof prop !== 'string') throw new Error('getStyle 함수의 두 번째 인수는 문자 타입 이어야 합니다.');
+
+  return getComputedStyle(node)[prop]
+
+}
 
 
+const h1FontSize = getStyle('.first','fontSize') // 32px
 
 
+/* 
+
+1. function name
+2. argument (함수 실행부)
+3. parameter
+4. return value
+5. validation
+6. Test Driven Development (TDD)
 
 
+*/
+
+
+function css(node,prop,value){
+
+  // if(!value){
+  //   // getter
+  //   return getStyle(node,prop)
+
+  // }else{
+  //   // setter
+  //   setStyle(node,prop,value)
+  // }
+
+  return !value ? getStyle(node,prop) : setStyle(node,prop,value);
+
+  // condition ? value1 : value2
+}
+
+// const css2 = (node,prop,value) => !value ? getStyle(node,prop) : setStyle(node,prop,value);
+
+// css2('.first','color','red') // setter
+
+css('.first','color') // getter
 
 
 
