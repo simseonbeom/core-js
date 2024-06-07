@@ -95,8 +95,8 @@ const arr = ['이민제','안재명','함정민']
 
 // ['멋쟁이-이민제','멋쟁이-안재명','멋쟁이-함정민']
 
-const mapValue = arr.map(function(item){
-  return '멋쟁이-' + item
+const mapValue = arr.map(function(item,index){
+  return `<div>순서 : ${index+1} , ${item}</div>`
 })
 
 console.log( mapValue );
@@ -145,14 +145,8 @@ function movePage(url,success,fail){
 
 movePage(
   'https://www.daum.net',
-  function(url){
- 
-    console.log(`현재 입력하신 url은 ${url}입니다. 3초 뒤 해당 사이트로 이동합니다.`);
-    // location.href = url
-  },
-  function(){
-    console.log('잘못된 url을 입력하셨습니다.');
-  }
+  url => console.log(`현재 입력하신 url은 ${url}입니다. 3초 뒤 해당 사이트로 이동합니다.`),
+  () => console.log('잘못된 url을 입력하셨습니다.')
 )
 
 
@@ -225,6 +219,7 @@ const MASTER = (function (tiger){
 // uuid = 'asdasdasdas'
 
 
+// import css from './css.js'
 
 
 const css = (function(){
