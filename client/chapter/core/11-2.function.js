@@ -125,12 +125,8 @@ let cb = function(isActive,success,fail){
 
 cb(
   false,
-  function(){
-    console.log('성공입니다!');
-  },
-  function(){
-    console.log('실패입니다..');
-  }
+  ()=> console.log('성공입니다!'),
+  ()=> console.log('실패입니다..')
 )
 
 function movePage(url,success,fail){
@@ -164,6 +160,11 @@ function map(arr,func){
   return result
   
 }
+
+map([1,2,3],function(item){ return item * 2})
+
+map([1,2,3],item => item * 2)
+
 // 함수를 인수로 받아 처리함.
 // 함수를 리턴함
 
