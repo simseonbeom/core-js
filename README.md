@@ -65,7 +65,22 @@
 
 ---
 ## Closure
-- [ ] Closure (클로저) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/14-1.closure.js)
-- [ ] Closure (시나리오) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/14-2.closure.js)
+- [x] Closure (클로저) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/14-1.closure.js)
+- [x] Closure (시나리오) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/14-2.closure.js)
 
 
+
+---
+## OptionalChainning & wrapper
+- [x] OptionalChainning(옵셔널체이닝) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/15.Optional.js)
+- [x] Wrapper(wrapper object) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/16.wrapper.js)
+
+---
+## Number
+- [x] Number(number Type) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/17.number.js)
+---
+## String
+- [x] String(string Type) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/18.string.js)
+---
+## Array
+- [x] Array(array Type) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/19.array.js)

@@ -216,6 +216,7 @@ const MASTER = (function (tiger){
 
 })(window)
 
+MASTER.setKey('aaa')
 
 // uuid = 'asdasdasdas'
 
