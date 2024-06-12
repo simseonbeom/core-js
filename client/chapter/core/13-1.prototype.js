@@ -112,6 +112,7 @@ function sum(a,b,c){
   return  a + b + c
 }
 
+// sum.call({})
 
 
 // sum.call(this) // this를 전달함 인수를 개별로 받음 => 함수 실행 o

@@ -69,33 +69,33 @@ const 호랑이 = new Tiger('호돌이');
 
 
 
-class Array extends Object{
+// class Array extends Object{
   
-  constructor(){
+//   constructor(){
 
-  }
+//   }
 
-  forEach(callback,arg){
+//   forEach(callback,arg){
 
-  }
+//   }
 
-  reduce(){
+//   reduce(){
 
-  }
-  map(){
+//   }
+//   map(){
 
-  }
+//   }
 
-  static isArray(){
+//   static isArray(){
 
-  }
+//   }
 
-  static from(){
+//   static from(){
 
-  }
-}
+//   }
+// }
 
-new Array()
+// new Array()
 
 
 
@@ -182,25 +182,6 @@ const button2 = new Todo({
   button:'.register2',
   renderPlace:'.todoList2'
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
