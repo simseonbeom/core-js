@@ -76,7 +76,6 @@ function checkBrowser(){
 }
 
 
-
 checkBrowser() // chrome
 
 
@@ -85,27 +84,95 @@ checkBrowser() // chrome
 
 
 
-let lastIndexOf;
-let includes;
-let startsWith;
-let endsWith;
+let lastIndexOf = message.lastIndexOf('s');
+console.log('lastIndexOf : ',lastIndexOf)
 
+
+let includes = message.includes('Less');
+console.log('includes : ',includes)
+
+
+let startsWith = message.startsWith('less');
+console.log('startsWith : ',startsWith)
+
+let endsWith = message.endsWith('more.');
+console.log('endsWith : ',endsWith)
+
+
+let str = '     a    b    c                 d         '
 
 // 공백 잘라내기
-let trimLeft;
-let trimRight;
-let trim;
+let trimStart = str.trimStart();
+console.log('trimStart : ',trimStart)
+
+
+let trimEnd = str.trimEnd();
+console.log('trimEnd : ',trimEnd)
+
+
+let trim = str.trim();
+console.log('trim : ',trim)
+
+
+const replaceAll = str.replaceAll(' ','');
+console.log('replaceAll : ',replaceAll)
+
+
+const replace = str.replace(/\s*/g,'');
+console.log('replace : ',replace)
+
+
+
+// function trimText(string){
+  
+//   return string.replace(/\s*/g,'');
+
+// }
+
+
+const trimText = s => s.replace(/\s*/g,'');
+
+trimText(str) // abcd
+
 
 
 // 텍스트 반복
-let repeat;
+let repeat = message.repeat(3);
+console.log('repeat : ',repeat)
 
 
 // 대소문자 변환
-let toLowerCase;
-let toUpperCase;
+let toLowerCase = message.toLowerCase();
+console.log('toLowerCase : ',toLowerCase)
+
+
+let toUpperCase = message.toUpperCase();
+console.log('toUpperCase : ',toUpperCase)
+
+
+console.clear()
 
 
 // 텍스트 이름 변환 유틸리티 함수
-let toCamelCase;
-let toPascalCase;
+function toCamelCase(string) {
+  return string.replace(/(\s|-|_)+./g, ($1) => $1.trim().replace(/(-|_)+/, '').toUpperCase())
+}
+
+
+
+function toPascalCase(string) {
+  let name = toCamelCase(string);
+  return name[0].toUpperCase() + name.slice(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+

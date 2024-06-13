@@ -27,9 +27,11 @@ const earth = () => {
 }
 
 
-const ufo = earth()
+const ufo1 = earth()
 
-ufo(-10)
+// const ufo2 = earth()
+
+ufo1(-10)
 
 
 
