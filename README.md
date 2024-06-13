@@ -84,3 +84,24 @@
 ---
 ## Array
 - [x] Array(array Type) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/19.array.js)
+- [x] ArrayMethod(array Method) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/20.arrayMethod.js)
+
+
+## iterator protocol
+- [x] iterator(iterator object) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/21.iterator.js)
+
+
+## 예외처리
+- [ ] Try..catch(예외처리) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/22.tryCatch.js)
+
+
+
+
+
+
+
+
+
+
+
+
