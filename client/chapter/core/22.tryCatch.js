@@ -89,7 +89,8 @@ try{
 catch(e){
   console.log( 'JSON Error : ' + e.message );
   
-  document.body.innerHTML = '404 not found 😜'
+  // document.body.innerHTML = '404 not found 😜'
+  // window.location.href = '404.html'
   
 }
 
