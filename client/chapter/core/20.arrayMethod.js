@@ -106,7 +106,6 @@ span.forEach((tag)=>{
 
 // shift
 
-
 // reverse
 const arr = [...people];
 arr.reverse()
@@ -288,6 +287,7 @@ forEach((item)=>{
 },[1,2,3])
 
 
+
 const map = (f,i) => {
   let result = [];
 
@@ -315,11 +315,13 @@ _filter(n => n > 3,[1,2,3,4,5])
 const _reduce = (f,acc,i) => {
 
   if(!i){
-    i = acc;
-    acc = i.shift()
-    // i = acc[Symbol.iterator]();
-    // acc = i.next().value
+    // i = acc;
+    // acc = i.shift()
+    i = acc[Symbol.iterator]();
+    acc = i.next().value
+
   }
+  
 
   for(const a of i){
     acc = f(acc,a);
@@ -328,10 +330,11 @@ const _reduce = (f,acc,i) => {
   return acc;
 }
 
+_reduce(()=> '', products)
 
 const add = (a,b) => a + b;
 
-console.log( _reduce( (t,p) => t + p.price,0 ,products) );
+console.log( _reduce( (t,p) => t + p.price, 0,products) );
 
 
 
@@ -345,6 +348,15 @@ console.log(
   )
   
 );
+
+
+// start(
+//   add,
+//   map(),
+//   filter(),
+//   reduce,
+//   log
+// )
 
 
 

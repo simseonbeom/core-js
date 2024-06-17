@@ -92,7 +92,7 @@
 
 
 ## 예외처리
-- [ ] Try..catch(예외처리) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/22.tryCatch.js)
+- [x] Try..catch(예외처리) [바로가기](https://github.com/simseonbeom/core-js/blob/01.core/client/chapter/core/22.tryCatch.js)
 
 
 
