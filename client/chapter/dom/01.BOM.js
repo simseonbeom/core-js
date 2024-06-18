@@ -39,6 +39,7 @@ const urlParams = new URLSearchParams(location.search);
 //   console.log(`${key}:${value}`);
 // }
 
+urlParams.get('type') // listing
 
 /* Navigator 객체 -------------------------------------------------------- */
 
@@ -48,6 +49,7 @@ const { platform, userAgent, language, onLine, geolocation } = navigator;
 
 function getGeolocation(success,fail){
 
+  
   navigator.geolocation.getCurrentPosition((data)=>{
   
     if(data){
@@ -94,6 +96,11 @@ getGeolocation(
 
 // getGeolocation()
 // .then(res => console.log(res))
+
+
+// const geo = getGeolocation()
+
+// geo // lat,long
 
 
 
