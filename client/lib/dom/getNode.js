@@ -9,7 +9,7 @@ function getNode(node,context = document){
   return context.querySelector(node);
 }
 
-
+getNode('.first')
 
 
 function getNodes(node,context = document){
