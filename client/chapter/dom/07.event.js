@@ -93,7 +93,68 @@ function handleMove({offsetX:x,offsetY:y}){
 
 
 
-ground.addEventListener('mousemove',handleMove)
+
+
+
+function debounce(callback,limit = 500){
+
+  let timeout;
+  return function (e){
+    clearTimeout(timeout)
+    timeout = setTimeout(()=>{
+   
+      callback.call(this,e)
+
+    },limit)
+  }
+}
+
+
+
+// call(this,a,a,a,a), apply(this,[a,a,a,a])
+
+
+// function totalPrice(...args){
+
+//   args
+//   arguments
+// }
+
+// totalPrice(1000,3000,5000)
+
+
+function throttle(callback,limit = 500){
+  let waiting = false;
+
+  return function (...args){
+    
+    if(!waiting){
+      callback.apply(this,args)
+      waiting = true;
+      setTimeout(() => waiting = false, limit);
+    }
+  }
+}
+
+
+
+// throttle(()=>{
+//   console.log('hit');
+// })()
+
+
+ground.addEventListener('mousemove',throttle(handleMove))
+
+
+
+// ground.addEventListener('mousemove',(e)=>{
+//   console.log( e );
+// })
+
+
+
+
+
 
 
 
