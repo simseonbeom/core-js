@@ -40,7 +40,7 @@ input,select{vertical-align:middle}
     li > a{
       border: 1px solid black;
       padding: 1rem 2rem;
-      
+
       .depth{
         position: absolute;
         left:0;
@@ -52,7 +52,7 @@ input,select{vertical-align:middle}
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        transition:height 0.3s;
+        /* transition:height 0.3s; */
       }
     }
   }
