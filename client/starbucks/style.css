@@ -35,11 +35,12 @@ input,select{vertical-align:middle}
 
   nav > ul {
     display: flex;
-    gap:2rem;
+    /* gap:2rem; */
 
     li > a{
       border: 1px solid black;
-
+      padding: 1rem 2rem;
+      
       .depth{
         position: absolute;
         left:0;

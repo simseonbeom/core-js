@@ -24,6 +24,10 @@ aList.forEach((a)=>{
 
     target.style.height = '100px';
   })
+
+  // a.addEventListener('mouseleave',()=>{
+  //   depthList.forEach(h)
+  // })
 })
 
 
