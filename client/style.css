@@ -54,6 +54,31 @@
 }
 
 
+section { 
+  background-color: orange;
+  padding: 2rem;
+}
+
+article { 
+  background-color: hotpink;
+  padding: 2rem;
+}
+
+p { 
+  background-color: dodgerblue;
+  padding: 2rem;
+}
+
+
+nav ul{
+  display: flex;
+  gap:2rem;
+  list-style: none;
+
+  li{
+    padding:1rem;
+  }
+}
 
 
 

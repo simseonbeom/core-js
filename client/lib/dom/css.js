@@ -6,6 +6,13 @@
 /* -------------------------------------------- */
 
 
+/**
+ * 
+ * @param {HTMLElement | string} node 
+ * @param  {string | array | object} className 
+ * @returns {void}
+ */
+
 function addClass(node,...className){
 
   if(typeof node === 'string') node = document.querySelector(node)
@@ -56,8 +63,6 @@ function toggleClass(node,className){
   
   return node.classList.toggle(className);
 }
-
-
 
 
 
