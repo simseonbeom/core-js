@@ -2,10 +2,16 @@
 
 
 
-  import { attr, getNode, getNodes } from "./lib/index.js";
+import { 
+  attr, 
+  getNode, 
+  insertLast,
+  clearContents, 
+} from "./lib/index.js";
 
 
-  console.log( attr );
+
+console.log( attr );
 
 function phase1(){
   // 1. input value 값 가져오기 (first,second)
@@ -25,13 +31,13 @@ function phase1(){
   const clear = getNode('#clear');
 
 
-
   function handleInput(){
     const firstValue = Number(first.value);
     const secondValue = +second.value;
     const total = firstValue + secondValue;
 
     clearContents(result)
+    
     insertLast(result,total);
   }
 

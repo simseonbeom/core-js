@@ -5,7 +5,7 @@ import { isString } from "../utils/type.js";
 
 
 
-function clearContents(node){
+export function clearContents(node){
 
   if(isString(node)) node = getNode(node);
 
