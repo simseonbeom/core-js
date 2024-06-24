@@ -1,4 +1,5 @@
-
+import { getNode } from "./getNode.js";
+import { isString } from "../utils/type.js";
 
 
 /* -------------------------------------------- */

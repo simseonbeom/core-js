@@ -2,15 +2,15 @@
 
 const typeOf = data => Object.prototype.toString.call(data).slice(8,-1).toLowerCase()
 
-const isArray = data => typeOf(data) === 'array'
-const isNull = data => typeOf(data) === 'null'
-const isNumber = data => typeOf(data) === 'number'
-const isObject = data => typeOf(data) === 'object'
-const isSymbol = data => typeOf(data) === 'symbol'
-const isBigInt = data => typeOf(data) === 'bigint'
-const isFunction = data => typeOf(data) === 'function'
-const isMath = data => typeOf(data) === 'math'
-const isString = data => typeOf(data) === 'string'
-const isUndefined = data => typeOf(data) === 'undefined'
+export const isArray = data => typeOf(data) === 'array'
+export const isNull = data => typeOf(data) === 'null'
+export const isNumber = data => typeOf(data) === 'number'
+export const isObject = data => typeOf(data) === 'object'
+export const isSymbol = data => typeOf(data) === 'symbol'
+export const isBigInt = data => typeOf(data) === 'bigint'
+export const isFunction = data => typeOf(data) === 'function'
+export const isMath = data => typeOf(data) === 'math'
+export const isString = data => typeOf(data) === 'string'
+export const isUndefined = data => typeOf(data) === 'undefined'
 
 

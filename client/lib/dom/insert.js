@@ -1,3 +1,6 @@
+import { getNode } from "./getNode.js";
+import { isString } from "../utils/type.js";
+
 function insertBefore(node,text){
   if(isString(node)) node = getNode(node);
   node.insertAdjacentHTML('beforebegin',text)
