@@ -14,30 +14,34 @@
     <script src="./lib/dom/attr.js"></script>
     <script src="./lib/dom/css.js"></script>
     <script src="./lib/utils/type.js"></script>
-    <script defer src="./chapter/dom/09.delegation.js"></script>
+    <script defer src="./main.js"></script>
 
   </head>
   <body>
 
  
-
-    <nav>
-      <ul>
-        <li class="about" data-name="about">
-          😀
-          <span>ABOUT</span>
-        </li>
-        <li class="home" data-name="home">
-          🏠
-          <span>HOME</span>
-        </li>
-        <li class="contact" data-name="contact">
-          📞
-          <span>CONTACT</span>
-        </li>
-      </ul>
-    </nav>
+    <form class="calculator">
+      <div class="first">
+        <label for="firstNumber">First Value</label>
+        <input type="number" name="first" id="firstNumber" required/>
+      </div>
+      
+      <div class="operator"> 
+       +
+      </div>
+      
+      <div class="second">
+        <label for="secondNumber">Second Value</label>
+        <input type="number" name="second" id="secondNumber" required/>
+      </div>
+    
+      <input id="clear" type="submit" value="clear"/>
   
+      <div class="result">
+        -
+      </div>
+  
+    </form>
 
 
 
