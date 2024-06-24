@@ -2,6 +2,12 @@
 
 
 
+// named export (이름 내보내기)
+
+// default export (기본 내보내기) 무조건 1개 
+
+// rename, alias
+
 import { 
   attr, 
   getNode, 
@@ -11,7 +17,6 @@ import {
 
 
 
-console.log( attr );
 
 function phase1(){
   // 1. input value 값 가져오기 (first,second)
