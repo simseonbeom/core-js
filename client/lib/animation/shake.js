@@ -14,5 +14,3 @@ export function shake (t){
   return animation
 }
 
-
-shake().restart();
