@@ -1,15 +1,14 @@
-
-import data from "./data/data.js";
+import data from './data/data.js';
 import { 
   getNode, 
+  addClass,
+  showAlert,
   getRandom, 
   insertLast, 
-  clearContents 
-} from './lib/index.js'
-
-
-
-
+  removeClass,
+  clearContents,
+  isNumericString,
+ } from './lib/index.js';
 
 // [phase-1]
 // 1. 주접 떨기 버튼을 클릭 하는 함수
@@ -25,28 +24,68 @@ import {
 
 // 4. pick 항목 랜더링하기
 
+// [phase-2]
+// 1. 아무 값도 입력 받지 못했을 때 예외처리 (콘솔 출력)
 
 const submit = getNode('#submit');
 const nameField = getNode('#nameField');
 const result = getNode('.result');
 
 
-function handleSubmit(e){
+
+const tween = gsap.to('#nameField',{
+  duration:0.1,
+  x:-10,
+  repeat:5,
+  yoyo:true,
+})
+
+function handleSubmit(e) {
   e.preventDefault();
 
   const name = nameField.value;
   const list = data(name);
   const pick = list[getRandom(list.length)];
 
-  console.log( pick );
-  
-  clearContents(result);
-  insertLast(result,pick);
+
+  if (!name || name.replace(/\s*/g,'') === '') {
+    
+    showAlert('.alert-error','공백은 허용하지 않습니다.')
+    
+
+    tween.play()
+
+    
+    console.log( 
+      
+
+    );
+    
+
+
+    return;
+  }
+
 
   
+  if(!isNumericString(name)){
+    
+    showAlert('.alert-error','제대로된 이름을 입력해 주세요.');
+
+
+
+    return;
+  }
+
+
+
+
+
+  clearContents(result);
+  insertLast(result, pick);
 }
 
-submit.addEventListener('click',handleSubmit)
+submit.addEventListener('click', handleSubmit);
 
 
 
