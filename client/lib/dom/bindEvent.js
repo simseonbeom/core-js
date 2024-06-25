@@ -15,3 +15,4 @@ export function bindEvent(node,type,handler){
 
 
 
+

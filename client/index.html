@@ -13,26 +13,52 @@
   </head>
   <body>
 
-    <div class="alert alert-error">제대로된 이름을 입력해주세요 !</div>
-    <div class="alert alert-success"> 클립보드에 복사 되었습니다 !</div>
-    
-    <div class="container">
-      <h2>🤣 주접 생성기</h2>
-      <h3>주접 생성기를 통해 사랑을 전하세요</h3>
+    <article id="RecordCouter" class="RecordDice">
+      <h1 class="logo">
+        <img src="./assets/logo.png" alt="레코드 카운터" height="200" />
+        <div class="star right-star"><img src="./assets/star.png" alt="반짝이별" /></div>
+        <div class="star left-star"><img src="./assets/star.png" alt="반짝이별" /></div>
+      </h1>
+      <div class="bg"></div>
+      <div id="diceContainer">
+        <div id="cube">
+          <div class="top"></div>
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="back"></div>
+          <div class="right"></div>
+          <div class="bottom"></div>
+        </div>
+      </div>
   
-      <form>
-        <label for="nameField">이름을 적어주세요 <span class="icon">👉</span></label>
-        <input type="text" id="nameField" placeholder="이름을 작성해주세요" value="" />
   
-        <input type="submit" value="주접 떨기" id="submit"/>
-  
-        <!-- 버튼 태그 레이어 -->
-        <div class="result">이름 작성 후 주접 떨기 버튼을 눌러주세요.</div>
-  
-        <span class="notice"> 👆 클릭시 클립보드에 복사됩니다! 👆</span>
-      </form>
-    </div>
-
+      <div class="buttonGroup">
+        <button type="button">주사위 <br />
+          굴리기</button>
+        <button type="button" disabled>기록</button>
+        <button type="button" disabled>초기화</button>
+      </div>
+      <div class="recordListWrapper" hidden>
+        <table class="recordList">
+          <caption>레코드 리스트</caption>
+          <div class="line"></div>
+          <thead>
+            <tr>
+              <th scope="col">회차</th>
+              <th scope="col">기록</th>
+              <th scope="col">합계</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- <tr>
+              <td>0</td>
+              <td>5</td>
+              <td>5</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </article>
 
   </body>
 </html>
