@@ -38,6 +38,8 @@ function xhr({
     xhr.setRequestHeader(key,value)
   })
 
+  
+
   xhr.addEventListener('readystatechange', () => {
     const { readyState, status, response } = xhr;
 
@@ -53,6 +55,8 @@ function xhr({
   });
 
   xhr.send(JSON.stringify(body));
+
+  
 }
 
 // 1. 무조건 매개변수 순서에 맞게 작성 ✅
@@ -71,9 +75,6 @@ function xhr({
 xhr.get = (url,성공,실패) =>{
   xhr({ url, 성공, 실패 })
 }
-
-
-
 xhr.post = (url,body,성공,실패) =>{
   xhr({ 
     method:'POST',
@@ -83,8 +84,6 @@ xhr.post = (url,body,성공,실패) =>{
     실패
    })
 }
-
-
 xhr.put = (url,body,성공,실패) =>{
   xhr({ 
     method:'PUT',
@@ -94,8 +93,6 @@ xhr.put = (url,body,성공,실패) =>{
     실패
    })
 }
-
-
 xhr.delete = (url,성공,실패) =>{
   xhr({ 
     method:'DELETE',
@@ -121,10 +118,37 @@ xhr.delete = (url,성공,실패) =>{
 
 
 
-// xhr
-// .post(ENDPOINT)
-// .then()
-// .then()
+function xhrPromise(method,url,body){
+
+  const xhr = new XMLHttpRequest();
+  
+  xhr.open(method,url);
+
+  xhr.send(JSON.stringify(body));
+
+  return new Promise((resolve, reject) => {
+    
+    xhr.addEventListener('readystatechange',()=>{
+      if(xhr.readyState === 4){
+        if(xhr.status >= 200 && xhr.status < 400){
+          resolve(JSON.parse(xhr.response));
+        }
+        else{
+          reject({message:'알 수 없는 오류'});
+        }
+      }
+    })
+  })
+}
+
+
+
+xhrPromise('GET',ENDPOINT,{name:'tiger'})
+.then((res)=>{
+  console.log( res );
+})
+
+
 
 
 

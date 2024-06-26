@@ -1,21 +1,14 @@
-
 import { getNode } from '../dom/getNode.js';
+import { isNumber, isObject } from './type.js'
 
-
-
-
-
-function delay(callback,timeout = 1000){
-  setTimeout(callback,timeout);
+function delay(callback, timeout = 1000) {
+  setTimeout(callback, timeout);
 }
 
 const first = getNode('.first');
 const second = getNode('.second');
 
-
-
-
-// delay(()=>{ 
+// delay(()=>{
 //   first.style.top = '-100px';
 //   second.style.top = '100px';
 //   delay(()=>{
@@ -28,34 +21,54 @@ const second = getNode('.second');
 //   })
 //  })
 
-const shouldRejected = false;
+const shouldRejected = true;
 
-const p = new Promise((성공,실패)=>{
-  if(!shouldRejected){
+// const p = new Promise((성공, 실패) => {
+//   if (!shouldRejected) {
+//     성공('성공!!');
+//   } else {
+//     실패('실패!');
+//   }
+// });
 
-    성공('성공!!');
+// 객체 합성
+const defaultOptions = {
+  shouldRejected:false,
+  data:'성공',
+  errorMessage:'알 수 없는 오류',
+  timeout:1000
+}
 
-  }else{
+function delayP(options) {
 
-    실패('실패!');
+  let config = {...defaultOptions}
+
+  if(isNumber(options)){
+    config.timeout = options
   }
-});
-
- 
-
-
-function delayP(){
-
+  
+  if(isObject(options)){
+    config = {...defaultOptions,...options}
+  }
+  
+  const {shouldRejected,data,errorMessage,timeout} = config;
 
   return new Promise((resolve, reject) => {
-    resolve('성공');
-  })
-
+    setTimeout(() => {
+      if (!shouldRejected) {
+        resolve(data);
+      } else {
+        reject({message:errorMessage});
+      }
+    }, timeout);
+  });
 }
 
 
-delayP()
-.then()
+
+// delayP({timeout:5000})
+
+delayP(5000)
 
 
 
@@ -72,3 +85,6 @@ delayP()
 
 
 
+
+
+  
