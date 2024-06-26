@@ -1,6 +1,7 @@
 import { getNode } from '../dom/getNode.js';
 import { isNumber, isObject } from './type.js'
 import { xhrPromise } from './xhr.js';
+import { insertLast } from '../dom/insert.js'
 
 
 function delay(callback, timeout = 1000) {
@@ -145,17 +146,20 @@ async function 라면끓이기(){
 // 라면끓이기()
 
 
-
-
-function getData(){
+async function getData(){
   
-  xhrPromise
+  const data = await xhrPromise.get('https://pokeapi.co/api/v2/pokemon/172');
+
+  console.log();
+
+  insertLast(document.body,`<img src="${data.sprites.other.showdown['front_default']}" alt="" />`)
+
 }
 
 
 
 
-
+getData()
 
 
 
