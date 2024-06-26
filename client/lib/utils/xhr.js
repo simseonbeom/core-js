@@ -108,16 +108,6 @@ xhr.delete = (url,성공,실패) =>{
 
 
 
-xhr.post(
-  ENDPOINT,
-  (data)=>{
-    console.log( data );
-  },
-  (err)=>{
-    console.log( err );
-  }
-)
-
 
 // 
 
