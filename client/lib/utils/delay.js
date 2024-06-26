@@ -1,5 +1,7 @@
 import { getNode } from '../dom/getNode.js';
 import { isNumber, isObject } from './type.js'
+import { xhrPromise } from './xhr.js';
+
 
 function delay(callback, timeout = 1000) {
   setTimeout(callback, timeout);
@@ -74,6 +76,82 @@ function delayP(options) {
 }
 
 delayP(5000)
+// .then(()=>)
+// .then(()=>)
+// .then(()=>)
+// .then(()=>)
+// .then(()=>)
+// .then(()=>)
+
+
+
+// async / await
+
+function d(){
+  
+  return new Promise((resolve, reject) => {
+    resolve('데이터')
+  })
+}
+
+
+// async 함수는 무 조 건 Promise object를 반환한다.
+// await  2가지 기능 수행
+//        1. result 꺼내오기
+//        2. 코드 실행 흐름 제어
+
+
+
+async function delayA(data){
+  
+  const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('성공!');
+    }, 2000);
+  })
+
+  // p.then((res)=>{
+  //   console.log(res);
+  // })
+
+  const result = await p ;
+
+  console.log(result);
+  return 
+}
+
+
+
+
+async function 라면끓이기(){
+
+  const a = await delayP({data:'물'})
+  console.log( a );
+
+  const b = await delayP({data:'스프'});
+  console.log( b );
+  
+
+  const c = await delayP({data:'면'});
+  console.log( c );
+  
+
+  const d = await delayP({data:'그릇'});
+  console.log( d );
+  
+
+}
+
+// 라면끓이기()
+
+
+
+
+function getData(){
+  
+  xhrPromise
+}
+
 
 
 
