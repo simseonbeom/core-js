@@ -32,12 +32,19 @@ const shouldRejected = true;
 // });
 
 // 객체 합성
+
 const defaultOptions = {
   shouldRejected:false,
   data:'성공',
   errorMessage:'알 수 없는 오류',
   timeout:1000
 }
+
+
+
+// const config = Object.assign({},defaultOptions);
+// const config = {...defaultOptions};
+
 
 function delayP(options) {
 
@@ -49,8 +56,10 @@ function delayP(options) {
   
   if(isObject(options)){
     config = {...defaultOptions,...options}
+    // Object.assign(config,options)
   }
   
+
   const {shouldRejected,data,errorMessage,timeout} = config;
 
   return new Promise((resolve, reject) => {
@@ -63,10 +72,6 @@ function delayP(options) {
     }, timeout);
   });
 }
-
-
-
-// delayP({timeout:5000})
 
 delayP(5000)
 
