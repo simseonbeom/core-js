@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server client --host=localhost --port=5500 --no-browser"
+    "dev": "live-server client --host=localhost --port=5500 --no-browser",
+    "serve": "json-server server/data/data.json",
+    "all": "run-p dev serve"
   },
   "keywords": [],
   "author": "범쌤",
@@ -15,6 +17,7 @@
     "globals": "^15.3.0",
     "json-server": "^0.17.4",
     "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5"
   }
 }

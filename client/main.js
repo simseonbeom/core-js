@@ -6,6 +6,7 @@ import {
   delayP,
   getNode,
   changeColor,
+  clearContents,
   renderSpinner,
   renderUserCard,
   renderEmptyCard,
@@ -14,7 +15,7 @@ import {
 
 
 
-const ENDPOINT = 'https://jsonplaceholder.typicode.com/users'
+const ENDPOINT = 'http://localhost:3000/users'
 
 
 
@@ -82,10 +83,17 @@ function handleDeleteCard(e){
 
   if( !button ) return;
 
-  console.log( button.closest('article') );
+  const article = button.closest('article');
+  const index = article.dataset.index.slice(5);
 
-  tiger.delete(`${ENDPOINT}/1`)
-  
+  tiger.delete(`${ENDPOINT}/${index}`)
+  .then(()=>{
+    
+    // 요청 보내고 렌더링하기
+    clearContents(userCardInner)
+    renderUserList()
+
+  })
 }
 
 
