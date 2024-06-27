@@ -103,6 +103,59 @@ userCardInner.addEventListener('click',handleDeleteCard)
 
 
 
+const createButton = getNode('.create');
+const cancelButton = getNode('.cancel');
+const doneButton = getNode('.done');
+
+
+
+
+function handleCreate(){
+  // gsap.to('.pop',{autoAlpha:1})  
+  createButton.classList.add('open') 
+}
+
+
+function handleCancel(e){
+  e.stopPropagation();
+  // gsap.to('.pop',{autoAlpha:0})
+  createButton.classList.remove('open');
+}
+
+function handleDone(e){
+  e.preventDefault();
+  
+  const name = getNode('#nameField').value;
+  const email = getNode('#emailField').value;
+  const website = getNode('#siteField').value;
+
+
+  tiger.post(ENDPOINT,{ name, email, website })
+  .then(()=>{
+    // 1. 팝업 닫기
+    // gsap.to('.pop',{autoAlpha:0})
+    createButton.classList.remove('open');
+
+    // 2. 카드 컨텐츠 비우기 
+    clearContents(userCardInner);
+
+    // 3. 유저카드 렌더링하기
+    renderUserList();
+  })
+
+
+}
+
+
+
+createButton.addEventListener('click',handleCreate)
+cancelButton.addEventListener('click',handleCancel)
+doneButton.addEventListener('click',handleDone)
+
+
+
+
+
 
 
 
