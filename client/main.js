@@ -36,7 +36,7 @@ async function renderUserList(){
   // 로딩 스피너 렌더링
   renderSpinner(userCardInner)
  
-  await delayP(2000);
+  // await delayP(2000);
   
 
   try{
@@ -44,7 +44,6 @@ async function renderUserList(){
     gsap.to('.loadingSpinner',{
       opacity:0,
       onComplete(){
-        console.log(this);
         this._targets[0].remove()
       }
     })
@@ -72,14 +71,45 @@ async function renderUserList(){
     console.error('에러가 발생했습니다!');
     renderEmptyCard(userCardInner)
   }
+}
+
+renderUserList()
 
 
+
+function handleDeleteCard(e){
+  const button = e.target.closest('button');
+
+  if( !button ) return;
+
+  console.log( button.closest('article') );
+
+  tiger.delete(`${ENDPOINT}/1`)
+  
 }
 
 
+userCardInner.addEventListener('click',handleDeleteCard)
 
 
-renderUserList()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
