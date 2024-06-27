@@ -3,8 +3,12 @@
 
 import { 
   tiger,
+  delayP,
   getNode,
+  changeColor,
+  renderSpinner,
   renderUserCard,
+  renderEmptyCard,
  } from "./lib/index.js";
 
 
@@ -28,15 +32,49 @@ const userCardInner = getNode('.user-card-inner');
 
 async function renderUserList(){
 
-  const response = await tiger.get(ENDPOINT);
 
-  const data = response.data;
+  // 로딩 스피너 렌더링
+  renderSpinner(userCardInner)
+ 
+  await delayP(2000);
+  
 
-  data.forEach(user => renderUserCard(userCardInner,user))
+  try{
 
-  gsap.from
+    gsap.to('.loadingSpinner',{
+      opacity:0,
+      onComplete(){
+        console.log(this);
+        this._targets[0].remove()
+      }
+    })
+    // getNode('.loadingSpinner').remove()
+
+    const response = await tiger.get(ENDPOINT);
+
+    const data = response.data;
+  
+    data.forEach(user => renderUserCard(userCardInner,user))
+  
+    changeColor('.user-card');
+  
+    gsap.from('.user-card',{
+      x:-100,
+      opacity:0,
+      stagger: {
+        amount: 1,
+        from:'start'
+      }
+    })
+  
+  }
+  catch{
+    console.error('에러가 발생했습니다!');
+    renderEmptyCard(userCardInner)
+  }
+
+
 }
-
 
 
 
