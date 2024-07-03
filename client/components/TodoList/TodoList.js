@@ -30,14 +30,37 @@ export class TodoList extends HTMLElement{
 
 
   connectedCallback(){
+
+    const tl = gsap.timeline({
+      defaults:{
+        opacity:0,
+      }
+    });
+    
+    tl.from(this.container.children[0],{delay:0.5,y:30});
+    tl.from(this.container.children[1],{height:0});
+    tl.from(this.container.children[2],{marginTop:40});
+
     this.addButton.addEventListener('click',()=> this.addTodoItem())
+
+
+
+    if(localStorage.getItem('todo')){
+      const data = JSON.parse(localStorage.getItem('todo'));
+      data.forEach(({id,value,checked})=>{
+        const todoItem = new TodoItem(id,value,checked);
+        this.todo.appendChild(todoItem);
+      })
+    }
+    
+
   }
 
   
   addTodoItem(){
 
 
-    const todoItem = new TodoItem(1,'TASK',false);
+    const todoItem = new TodoItem(Date.now(),'',false);
     this.todo.appendChild(todoItem);
 
   }
