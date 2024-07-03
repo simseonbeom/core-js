@@ -38,7 +38,7 @@ export class TodoList extends HTMLElement{
     });
     
     tl.from(this.container.children[0],{delay:0.5,y:30});
-    tl.from(this.container.children[1],{height:0});
+    tl.from(this.container.children[1],{height:0,clearProps:'all'});
     tl.from(this.container.children[2],{marginTop:40});
 
     this.addButton.addEventListener('click',()=> this.addTodoItem())
