@@ -1,0 +1,50 @@
+
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  background: #CBD0D3;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  
+  
+
+  input[type="text"] {
+    padding: 0.2rem 0.7rem;
+    border-radius: 2px;
+    border: none;
+    background:none;
+    color:#2f2f2f;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    &:focus{
+      outline: 2px solid #CE6151;
+    }
+  }
+
+  input[type="checkbox"]{
+    zoom:1.7
+  }
+
+  button{
+    width: 24px;
+    height: 24px;
+    background-color: #e5553f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+
+  }
+}
+
+
+
+
+.done{
+  opacity: 0.2;
+  pointer-events: none;
+}
